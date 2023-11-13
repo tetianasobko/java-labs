@@ -1,17 +1,18 @@
+package model;
 import java.util.Objects;
 
 public class BankAccount {
-    private String ownerName;
+    private String accountType;
     private String accountNumber;
     private CurrencyType currencyType;
     private double balance;
 
-    public String getOwnerName() {
-        return ownerName;
+    public String getAccountType() {
+        return accountType;
     }
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     public String getAccountNumber() {

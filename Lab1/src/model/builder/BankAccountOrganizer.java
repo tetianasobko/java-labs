@@ -1,3 +1,8 @@
+package model.builder;
+
+import model.BankAccount;
+import model.CurrencyType;
+
 public class BankAccountOrganizer {
     private BankAccountBuilder bankAccountBuilder;
 
@@ -13,13 +18,10 @@ public class BankAccountOrganizer {
         return bankAccountBuilder.getBankAccount();
     }
 
-    /**
-     * Method to organize a competition on specified date
-     */
     public void organizeBankAccount(CurrencyType currencyType) {
         bankAccountBuilder.createNewBankAccount();
 
-        bankAccountBuilder.buildOwnerName();
+        bankAccountBuilder.buildAccountType();
         bankAccountBuilder.buildAccountNumber();
         bankAccountBuilder.buildCurrencyType(currencyType);
         bankAccountBuilder.buildBalance();

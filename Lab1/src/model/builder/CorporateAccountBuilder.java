@@ -1,3 +1,8 @@
+package model.builder;
+
+import model.BankAccount;
+import model.CurrencyType;
+
 import java.util.Objects;
 import java.util.Random;
 
@@ -9,8 +14,8 @@ public class CorporateAccountBuilder extends BankAccountBuilder{
     }
 
     @Override
-    public void buildOwnerName() {
-        bankAccount.setOwnerName(companyName);
+    public void buildAccountType() {
+        bankAccount.setAccountType("corporate: " + companyName);
     }
 
     @Override
@@ -38,24 +43,8 @@ public class CorporateAccountBuilder extends BankAccountBuilder{
     }
 
     @Override
-    public String toString() {
-        return "CorporateAccountBuilder{" +
-                "companyName='" + companyName + '\'' +
-                ", bankAccount=" + bankAccount +
-                '}';
+    public BankAccount build() {
+        return null;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        CorporateAccountBuilder that = (CorporateAccountBuilder) o;
-        return Objects.equals(companyName, that.companyName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), companyName);
-    }
 }

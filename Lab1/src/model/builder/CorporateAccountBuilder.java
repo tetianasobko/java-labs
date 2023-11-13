@@ -1,21 +1,20 @@
 package model.builder;
 
-import model.BankAccount;
+import model.CorporateBankAccount;
+import model.IndividualBankAccount;
 import model.CurrencyType;
 
-import java.util.Objects;
 import java.util.Random;
 
 public class CorporateAccountBuilder extends BankAccountBuilder{
-    private String companyName;
-
-    public CorporateAccountBuilder(String companyName) {
-        this.companyName = companyName;
-    }
+    private String accountType;
+    private String accountNumber;
+    private CurrencyType currencyType;
+    private double balance;
 
     @Override
-    public void buildAccountType() {
-        bankAccount.setAccountType("corporate: " + companyName);
+    public void buildAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     @Override
@@ -29,22 +28,21 @@ public class CorporateAccountBuilder extends BankAccountBuilder{
             accountNumber.append(digit);
         }
 
-        bankAccount.setAccountNumber('C' + accountNumber.toString());
+        this.accountNumber = 'C' + accountNumber.toString();
     }
 
     @Override
     public void buildCurrencyType(CurrencyType currencyType) {
-        bankAccount.setCurrencyType(currencyType);
+        this.currencyType = currencyType;
     }
 
     @Override
-    public void buildBalance() {
-        bankAccount.setBalance(0);
+    public void buildBalance(int balance) {
+        this.balance = balance;
     }
 
-    @Override
-    public BankAccount build() {
-        return null;
+    public CorporateBankAccount build() {
+        return new CorporateBankAccount(accountType, accountNumber, currencyType, balance);
     }
 
 }

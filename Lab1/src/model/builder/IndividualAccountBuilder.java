@@ -1,27 +1,18 @@
 package model.builder;
 
-import model.BankAccount;
+import model.IndividualBankAccount;
 import model.CurrencyType;
 import java.util.Random;
 
 public class IndividualAccountBuilder extends BankAccountBuilder{
-    private String firstName;
-    private String lastName;
-    private String patronymic;
-
-    public IndividualAccountBuilder(String firstName, String lastName, String patronymic) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-    }
-
-
-    public IndividualAccountBuilder() {
-    }
+    private String accountType;
+    private String accountNumber;
+    private CurrencyType currencyType;
+    private double balance;
 
     @Override
-    public void buildAccountType() {
-        bankAccount.setAccountType("personal: " + firstName + " " + lastName + " " + patronymic);
+    public void buildAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     @Override
@@ -35,23 +26,20 @@ public class IndividualAccountBuilder extends BankAccountBuilder{
             accountNumber.append(digit);
         }
 
-        bankAccount.setAccountNumber('I' + accountNumber.toString());
+        this.accountNumber = 'I' + accountNumber.toString();
     }
 
     @Override
     public void buildCurrencyType(CurrencyType currencyType) {
-        bankAccount.setCurrencyType(currencyType);
+        this.currencyType = currencyType;
     }
 
     @Override
-    public void buildBalance() {
-        bankAccount.setBalance(0);
+    public void buildBalance(int balance) {
+        this.balance = balance;
     }
 
-    @Override
-    public BankAccount build() {
-        return null;
+    public IndividualBankAccount build() {
+        return new IndividualBankAccount(accountType, accountNumber, currencyType, balance);
     }
-
-
 }

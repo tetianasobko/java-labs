@@ -1,26 +1,25 @@
-import model.BankAccount;
+import model.CorporateBankAccount;
+import model.IndividualBankAccount;
 import model.CurrencyType;
 import model.builder.BankAccountBuilder;
 import model.builder.BankAccountOrganizer;
 import model.builder.CorporateAccountBuilder;
 import model.builder.IndividualAccountBuilder;
 
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
         BankAccountOrganizer organizer = new BankAccountOrganizer();
-        BankAccountBuilder individual = new IndividualAccountBuilder("Tetiana", "Sobko", "Viktorivna");
-        BankAccountBuilder corporate = new CorporateAccountBuilder("SoftServe");
 
-        organizer.setBankAccountBuilder(individual);
-        organizer.organizeBankAccount(CurrencyType.EUR);
+        IndividualAccountBuilder individualBuilder = new IndividualAccountBuilder();
+        organizer.organizeIndividualAccount(individualBuilder);
 
-        organizer.setBankAccountBuilder(corporate);
-        organizer.organizeBankAccount(CurrencyType.USD);
+        IndividualBankAccount individualBankAccount = individualBuilder.build();
+        System.out.println("Individual account: " + individualBankAccount.getAccountType());
 
-        BankAccount account = organizer.getBankAccount();
-//
-//        BankAccount account1 =
+        CorporateAccountBuilder corporateBuilder = new CorporateAccountBuilder();
+        organizer.organizeCorporateAccount(corporateBuilder);
+
+        CorporateBankAccount corporateBankAccount = corporateBuilder.build();
+        System.out.println("Corporate account: " + corporateBankAccount.getAccountType());
     }
 }

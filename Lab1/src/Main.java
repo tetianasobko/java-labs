@@ -1,7 +1,5 @@
 import model.CorporateBankAccount;
 import model.IndividualBankAccount;
-import model.CurrencyType;
-import model.builder.BankAccountBuilder;
 import model.builder.BankAccountOrganizer;
 import model.builder.CorporateAccountBuilder;
 import model.builder.IndividualAccountBuilder;

@@ -24,7 +24,7 @@ public class BankAccountServiceStream implements BankAccountService{
     @Override
     public List<BankAccount> sortByAccountNumber() {
         return bankAccountList.stream()
-                .sorted(Comparator.comparing(BankAccount::getAccountNumber))
+                .sorted()
                 .collect(Collectors.toList());
     }
 

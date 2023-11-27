@@ -2,9 +2,7 @@ package services;
 
 import model.BankAccount;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class BankAccountServiceComp implements BankAccountService{
 
@@ -25,7 +23,7 @@ public class BankAccountServiceComp implements BankAccountService{
     @Override
     public List<BankAccount> sortByAccountNumber() {
         List<BankAccount> result = new ArrayList<>(bankAccountList);
-        result.sort(Comparator.comparing(BankAccount::getAccountNumber));
+        Collections.sort(result);
         return result;
     }
 

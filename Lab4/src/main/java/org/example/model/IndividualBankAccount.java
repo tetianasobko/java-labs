@@ -9,7 +9,6 @@ public class IndividualBankAccount extends BankAccount{
     @Pattern(regexp = "personal", message = "Account type must be 'personal'")
     private String accountType;
 
-    @Pattern(regexp = "I\\d{10}", message = "Account number must start with 'I' followed by a 10-digit number")
     private String accountNumber;
 
     @NotNull(message = "Currency type must not be null")

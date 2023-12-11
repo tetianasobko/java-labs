@@ -10,7 +10,6 @@ public class CorporateBankAccount extends BankAccount{
     @Pattern(regexp = "corporate", message = "Account type must be 'corporate'")
     private String accountType;
 
-    @Pattern(regexp = "C\\d{10}", message = "Account number must start with 'I' followed by a 10-digit number")
     private String accountNumber;
 
     @NotNull(message = "Currency type must not be null")

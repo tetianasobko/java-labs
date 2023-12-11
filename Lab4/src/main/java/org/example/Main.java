@@ -16,16 +16,10 @@ public class Main {
         IndividualBankAccount individualBankAccount = individualBuilder.build();
         System.out.println("Individual account: " + individualBankAccount.getAccountNumber());
 
-        CorporateAccountBuilder corporateBuilder = new CorporateAccountBuilder();
-        organizer.organizeCorporateAccount(corporateBuilder);
-
-        CorporateBankAccount corporateBankAccount = corporateBuilder.build();
-        System.out.println("Corporate account: " + corporateBankAccount.getAccountType());
-
         IndividualAccountBuilder invalidBuilder = new IndividualAccountBuilder();
         organizer.organizeInvalidAccount(invalidBuilder);
 
         IndividualBankAccount invalidBankAccount = invalidBuilder.build();
-        System.out.println("Individual account: " + invalidBankAccount.getAccountNumber());
+        System.out.println("Invalid account: " + invalidBankAccount.getAccountNumber());
     }
 }

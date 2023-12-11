@@ -6,7 +6,6 @@ import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
 import org.example.model.BankAccount;
-import org.example.model.CorporateBankAccount;
 import org.example.model.CurrencyType;
 
 import java.util.HashSet;

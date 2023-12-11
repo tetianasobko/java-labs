@@ -47,23 +47,6 @@ public class IndividualAccountBuilder extends BankAccountBuilder{
         this.balance = balance;
     }
 
-    private void validate(IndividualBankAccount account) {
-
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
-
-        Set<String> validationMessages = new HashSet<>();
-        Set<ConstraintViolation<IndividualBankAccount>> violations = validator.validate(account);
-
-        for (ConstraintViolation<IndividualBankAccount> violation : violations) {
-            validationMessages.add(violation.getInvalidValue() + ": " + violation.getMessage());
-        }
-
-        if (!validationMessages.isEmpty()) {
-            throw new IllegalArgumentException("Invalid fields: " + String.join(", ", validationMessages));
-        }
-    }
-
     public IndividualBankAccount build() {
         IndividualBankAccount account = new IndividualBankAccount(accountType, accountNumber, currencyType, balance);
         validate(account);

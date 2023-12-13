@@ -1,22 +1,12 @@
 package org.example.model;
 
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.PositiveOrZero;
 
 import java.util.Objects;
 
 public class CorporateBankAccount extends BankAccount{
     @Pattern(regexp = "corporate", message = "Account type must be 'corporate'")
     private String accountType;
-
-    private String accountNumber;
-
-    @NotNull(message = "Currency type must not be null")
-    private CurrencyType currencyType;
-
-    @PositiveOrZero(message = "Balance must be zero or positive")
-    private Double balance;
 
     public CorporateBankAccount(String accountType, String accountNumber, CurrencyType currencyType, double balance) {
         this.accountType = accountType;

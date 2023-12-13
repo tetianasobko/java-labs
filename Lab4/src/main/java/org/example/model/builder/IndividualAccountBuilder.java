@@ -12,19 +12,20 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-public class IndividualAccountBuilder extends BankAccountBuilder{
+public class IndividualAccountBuilder extends BankAccountBuilder<IndividualAccountBuilder>{
     private String accountType;
     private String accountNumber;
     private CurrencyType currencyType;
     private double balance;
 
     @Override
-    public void buildAccountType(String accountType) {
+    public IndividualAccountBuilder buildAccountType(String accountType) {
         this.accountType = accountType;
+        return this;
     }
 
     @Override
-    public void buildAccountNumber() {
+    public IndividualAccountBuilder buildAccountNumber() {
         int accountNumberLength = 10;
         StringBuilder accountNumber = new StringBuilder();
 
@@ -35,16 +36,20 @@ public class IndividualAccountBuilder extends BankAccountBuilder{
         }
 
         this.accountNumber = 'I' + accountNumber.toString();
+
+        return this;
     }
 
     @Override
-    public void buildCurrencyType(CurrencyType currencyType) {
+    public IndividualAccountBuilder buildCurrencyType(CurrencyType currencyType) {
         this.currencyType = currencyType;
+        return this;
     }
 
     @Override
-    public void buildBalance(int balance) {
+    public IndividualAccountBuilder buildBalance(int balance) {
         this.balance = balance;
+        return this;
     }
 
     public IndividualBankAccount build() {

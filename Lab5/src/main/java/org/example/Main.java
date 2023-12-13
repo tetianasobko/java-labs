@@ -7,10 +7,10 @@ public class Main {
         ClientDB clientDB = new ClientDB(dbManager);
         BankAccountDB bankAccountDB = new BankAccountDB(dbManager);
 
-//        clientDB.createClientTable();
-//        bankAccountDB.createBankAccountTable();
-        bankAccountDB.dropBankAccountTable();
-        clientDB.dropClientTable();
+        clientDB.createClientTable();
+        bankAccountDB.createBankAccountTable();
+//        bankAccountDB.dropBankAccountTable();
+//        clientDB.dropClientTable();
 
 
 

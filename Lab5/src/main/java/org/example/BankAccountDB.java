@@ -16,7 +16,7 @@ public class BankAccountDB {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "accountType VARCHAR(9) NOT NULL, " +
                 "accountNumber VARCHAR(11) NOT NULL, " +
-                "currencyType INT NOT NULL, " +
+                "currencyType VARCHAR(3) NOT NULL, " +
                 "balance MONEY NOT NULL, " +
                 "clientId INTEGER NOT NULL, " +
                 "FOREIGN KEY(clientId) REFERENCES Client(id))";

@@ -11,14 +11,14 @@ import org.example.model.CurrencyType;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class BankAccountBuilder {
-    public abstract void buildAccountType(String accountType);
+public abstract class BankAccountBuilder<T> {
+    public abstract T buildAccountType(String accountType);
 
-    public abstract void buildAccountNumber();
+    public abstract T buildAccountNumber();
 
-    public abstract void buildCurrencyType(CurrencyType currencyType);
+    public abstract T buildCurrencyType(CurrencyType currencyType);
 
-    public abstract void buildBalance(int balance);
+    public abstract T buildBalance(int balance);
 
     protected void validate(BankAccount account) {
 

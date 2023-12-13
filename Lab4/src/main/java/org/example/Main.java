@@ -16,10 +16,10 @@ public class Main {
         IndividualBankAccount individualBankAccount = individualBuilder.build();
         System.out.println("Individual account: " + individualBankAccount.getAccountNumber());
 
-        IndividualAccountBuilder invalidBuilder = new IndividualAccountBuilder();
-        organizer.organizeInvalidAccount(invalidBuilder);
-
-        IndividualBankAccount invalidBankAccount = invalidBuilder.build();
-        System.out.println("Invalid account: " + invalidBankAccount.getAccountNumber());
+        IndividualBankAccount invalidBankAccount = new IndividualAccountBuilder()
+                .buildAccountType("individual")
+                .buildAccountNumber()
+                .buildBalance(-100)
+                .build();
     }
 }

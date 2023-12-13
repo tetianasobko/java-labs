@@ -24,10 +24,4 @@ public class BankAccountOrganizer {
         bankAccountBuilder.buildBalance(11000);
     }
 
-    public void organizeInvalidAccount(BankAccountBuilder bankAccountBuilder) {
-        bankAccountBuilder.buildAccountType("individual");
-        bankAccountBuilder.buildAccountNumber();
-        bankAccountBuilder.buildCurrencyType(null);
-        bankAccountBuilder.buildBalance(-100);
-    }
 }
